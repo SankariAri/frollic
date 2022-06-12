@@ -1,4 +1,5 @@
 const axios = require('axios');
+require('dotenv').config();
 
 const controller = {};
 
@@ -12,7 +13,6 @@ controller.getResults = (req, res, next) => {
   axios({
     method: 'GET',
     url: 'https://api.yelp.com/v3/businesses/search',
-    // data: {},
     params: {
       'attributes' : 'wheelchair_accessible',
       'radius': radius,
@@ -20,9 +20,7 @@ controller.getResults = (req, res, next) => {
       'categories': categories,
     },
     headers: {
-      // 'Content-Type': 'application/json',
-      // 'Connection' : 'keep-alive',
-      'Authorization' : 'Bearer KNE0mtfCCGa3y-PxXLKA6gjOTu2C0cWDW3xp3aHq4n3PFnfQpOOF97G1jC1HgCCaQDbo1r7_V9kwP1-hWv44q03V6x5xL0bV0IN8Fl0NR0umfqM_GKZWxKTM9BulYnYx',
+      'Authorization' : process.env.YELP_API_KEY,
     },
   })
   .then((response) => {
