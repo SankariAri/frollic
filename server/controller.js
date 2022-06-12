@@ -22,7 +22,7 @@ controller.getResults = (req, res, next) => {
     headers: {
       // 'Content-Type': 'application/json',
       // 'Connection' : 'keep-alive',
-      'Authorization' : 'Bearer ***REMOVED***',
+      'Authorization' : 'Bearer KNE0mtfCCGa3y-PxXLKA6gjOTu2C0cWDW3xp3aHq4n3PFnfQpOOF97G1jC1HgCCaQDbo1r7_V9kwP1-hWv44q03V6x5xL0bV0IN8Fl0NR0umfqM_GKZWxKTM9BulYnYx',
     },
   })
   .then((response) => {
